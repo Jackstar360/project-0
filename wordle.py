@@ -2,14 +2,24 @@
 word = "dinkl"
 
 # TASK B: Define a function 'makeAGuess()' that passes in a users guess as a parameter
+def makeAGuess(userGuess):
+  global word
 
 
   # TASK C:Define a variable 'hint' that holds an empty string
- 
+  hint = ""
 
   # TASK D: Build a loop that loops from 0 to the length of word
-  
+  for i in range(len(word)):
+    if userGuess[i] == word[i]:
+      hint += ("G")
+    elif userGuess[i] in word[i]:
+      hint += ("Y")
+    else:
+      hint += ("-")
+  return hint
 
+print(makeAGuess("dobbl"))
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
     
     
