@@ -1,5 +1,7 @@
+from wonderwords import RandomWord
 # TASK A: Define a variable 'word' that holds the correct word for the wordle game
-word = "dinkl"
+word = r.word(word_min_length=5, word_max_length=5)
+t = 1
 
 # TASK B: Define a function 'makeAGuess()' that passes in a users guess as a parameter
 def makeAGuess(userGuess):
@@ -19,7 +21,7 @@ def makeAGuess(userGuess):
       hint += ("-")
   return hint
 
-print(makeAGuess("dobbl"))
+
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
     
     
@@ -35,6 +37,18 @@ print(makeAGuess("dobbl"))
 print("Let's play wordle! /n Guess the Wordle in 6 tries. Each guess must be a valid 5-letter word. For each guess, a hint will tell you how many letters you've guessed correctly. A G represents a letter in the word and in the correct spot.. A Y represents a letter in the word but in the wrong spot. A - represents a letter not in the word in any spot. \n Guess below! \n")
 
 # TASK I: Build a loop that loops 6 times (representing the number of guesses a user has)
+for i in range(6):
+  guess = input("Put your guess here: ").lower()
+
+  hint = makeAGuess(guess)
+
+  print(hint)
+  if hint == "GGGGG":
+    print("You Won!")
+    break
+if hint != "GGGGG":
+  print("You Lost")
+
 
 
   # TASK J: Define a variable 'guess'. prompt the user for their 5-letter guess and store it in the variable
